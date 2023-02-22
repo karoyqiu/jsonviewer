@@ -13,8 +13,6 @@
 #pragma once
 #include <QMainWindow>
 
-class JsonModel;
-
 namespace Ui {
 class MainWindow;
 }
@@ -41,5 +39,4 @@ private:
 
 private:
     Ui::MainWindow *ui;
-    JsonModel *model_;
 };

@@ -10,30 +10,27 @@
  * \copyright   © 2017 Roy QIU。
  *
  **************************************************************************************************/
-#include "stable.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "jsonhighlighter.h"
-#include "jsonmodel.h"
+#include "jsonwindow.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , model_(Q_NULLPTR)
 {
-    model_ = new JsonModel(this);
+    //model_ = new JsonModel(this);
 
     ui->setupUi(this);
-    ui->treeView->setModel(model_);
+    //ui->treeView->setModel(model_);
 
-    QToolButton *button = new QToolButton(this);
-    button->setDefaultAction(ui->actionOpen);
-    button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    ui->centerWidget->setCornerWidget(button, Qt::TopLeftCorner);
+    //QToolButton *button = new QToolButton(this);
+    //button->setDefaultAction(ui->actionOpen);
+    //button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    //ui->centerWidget->setCornerWidget(button, Qt::TopLeftCorner);
 
-    new JsonHighlighter(ui->editView->document());
+    //new JsonHighlighter(ui->editView->document());
 
     connect(ui->actionOpen, &QAction::triggered, this, &MainWindow::openDocument);
 
@@ -80,10 +77,12 @@ void MainWindow::openDocument()
 
         if (file.open(QFile::ReadOnly | QFile::Text))
         {
-            model_->setJson(file.readAll());
-            ui->treeView->expandAll();
-            ui->editView->setPlainText(QString::fromUtf8(model_->document().toJson()));
-            setWindowFilePath(filename);
+            auto body = file.readAll();
+            auto *window = new JsonWindow;
+            window->setJson(body);
+            window->setWindowFilePath(filename);
+            ui->centerWidget->addSubWindow(window);
+            window->showMaximized();
         }
         else
         {
@@ -98,7 +97,6 @@ void MainWindow::loadSettings()
     QSettings settings;
     restoreGeometry(settings.value(QS("geo")).toByteArray());
     restoreState(settings.value(QS("state")).toByteArray());
-    ui->treeView->header()->restoreState(settings.value(QS("headerState")).toByteArray());
 }
 
 
@@ -107,5 +105,4 @@ void MainWindow::saveSettings() const
     QSettings settings;
     settings.setValue(QS("geo"), saveGeometry());
     settings.setValue(QS("state"), saveState());
-    settings.setValue(QS("headerState"), ui->treeView->header()->saveState());
 }

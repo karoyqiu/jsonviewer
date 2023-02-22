@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/elementary/index.theme</file>
+        <file>icons/elementary/actions/24/document-open.svg</file>
+    </qresource>
+</RCC>

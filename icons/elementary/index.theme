@@ -1,0 +1,9 @@
+[Icon Theme]
+Name=elementary
+Comment=Smooth modern theme designed to be intuitive.
+Directories=actions/24
+
+[actions/24]
+Size=24
+Type=Scalable
+Context=Actions

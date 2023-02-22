@@ -54,6 +54,10 @@ set(PROJECT_SOURCES
     jsonhighlighter.cpp jsonhighlighter.h
     jsonitem.cpp jsonitem.h
     jsonmodel.cpp jsonmodel.h
+    jsonwindow.cpp jsonwindow.h
+    jsonview.h
+    jsontreeview.cpp jsontreeview.h
+    icons.qrc
     "${CMAKE_CURRENT_BINARY_DIR}/resource.rc"
     ${TS_FILES}
 )
