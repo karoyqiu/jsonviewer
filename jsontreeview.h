@@ -28,5 +28,10 @@ public:
     virtual QByteArray json() const override;
 
 private:
+    void showMenu(const QPoint &pos);
+    void copyNode();
+
+private:
     JsonModel *model_;
+    QMenu *menu_;
 };

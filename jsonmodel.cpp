@@ -248,3 +248,15 @@ void JsonModel::setJson(const QByteArray &json)
 
     qInfo() << "JSON parsed:" << timer.elapsed();
 }
+
+
+QString JsonModel::copyNode(const QModelIndex &idx) const
+{
+    if (!idx.isValid())
+    {
+        return {};
+    }
+
+    const JsonItem *item = static_cast<const JsonItem *>(idx.internalPointer());
+    return QString::fromUtf8(item->toJson());
+}

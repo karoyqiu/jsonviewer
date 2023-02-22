@@ -31,7 +31,7 @@ public:
     };
     Q_ENUMS(Column)
 
-    explicit JsonModel(QObject *parent = Q_NULLPTR);
+        explicit JsonModel(QObject *parent = Q_NULLPTR);
     virtual ~JsonModel();
 
     // Header:
@@ -39,27 +39,25 @@ public:
 
     // Basic functionality:
     virtual QModelIndex index(int row, int column,
-                              const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    virtual QModelIndex parent(const QModelIndex &index) const Q_DECL_OVERRIDE;
+        const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    virtual QModelIndex parent(const QModelIndex &idx) const Q_DECL_OVERRIDE;
 
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     virtual int columnCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
 
-    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    virtual QVariant data(const QModelIndex &idx, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
     // Editable:
-    virtual bool setData(const QModelIndex &index, const QVariant &value,
-                         int role = Qt::EditRole) Q_DECL_OVERRIDE;
+    virtual bool setData(const QModelIndex &idx, const QVariant &value,
+        int role = Qt::EditRole) Q_DECL_OVERRIDE;
 
-    virtual Qt::ItemFlags flags(const QModelIndex& index) const Q_DECL_OVERRIDE;
+    virtual Qt::ItemFlags flags(const QModelIndex &idx) const Q_DECL_OVERRIDE;
 
-    const QJsonDocument &document() const
-    {
-        return doc_;
-    }
-
-public slots:
     void setJson(const QByteArray &json);
+
+    const QJsonDocument &document() const { return doc_; }
+
+    QString copyNode(const QModelIndex &idx) const;
 
 private:
     QJsonDocument doc_;

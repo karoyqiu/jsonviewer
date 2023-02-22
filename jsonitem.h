@@ -40,6 +40,8 @@ public:
     int childCount() const;
     JsonItem *childAt(int index) const;
 
+    QByteArray toJson() const;
+
 private:
     QSharedDataPointer<JsonItemData> data;
 };

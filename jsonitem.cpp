@@ -138,3 +138,21 @@ JsonItem *JsonItem::childAt(int index) const
 {
     return data->children_.at(index);
 }
+
+
+QByteArray JsonItem::toJson() const
+{
+    if (data->value_.isObject())
+    {
+        QJsonDocument doc(data->value_.toObject());
+        return doc.toJson(QJsonDocument::Compact);
+    }
+
+    if (data->value_.isArray())
+    {
+        QJsonDocument doc(data->value_.toArray());
+        return doc.toJson(QJsonDocument::Compact);
+    }
+
+    return {};
+}

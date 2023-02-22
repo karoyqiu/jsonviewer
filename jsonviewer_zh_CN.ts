@@ -63,6 +63,14 @@
     </message>
 </context>
 <context>
+    <name>JsonTreeView</name>
+    <message>
+        <location filename="jsontreeview.cpp" line="62"/>
+        <source>Copy node</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>Tree view</source>

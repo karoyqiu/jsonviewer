@@ -17,9 +17,12 @@
 JsonTreeView::JsonTreeView(QWidget *parent /*= nullptr*/)
     : QTreeView(parent)
     , model_(nullptr)
+    , menu_(nullptr)
 {
     setAlternatingRowColors(true);
     setAnimated(true);
+    setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(this, &QWidget::customContextMenuRequested, this, &JsonTreeView::showMenu);
 }
 
 
@@ -44,4 +47,29 @@ QByteArray JsonTreeView::json() const
     }
 
     return model_->document().toJson(QJsonDocument::Compact);
+}
+
+
+void JsonTreeView::showMenu(const QPoint &pos)
+{
+    auto idx = indexAt(pos);
+
+    if (idx.column() == JsonModel::NameColumn)
+    {
+        if (menu_ == nullptr)
+        {
+            menu_ = new QMenu(this);
+            menu_->addAction(tr("Copy node"), this, &JsonTreeView::copyNode);
+        }
+
+        menu_->popup(viewport()->mapToGlobal(pos));
+    }
+}
+
+
+void JsonTreeView::copyNode()
+{
+    auto idx = currentIndex();
+    auto s = model_->copyNode(idx);
+    qApp->clipboard()->setText(s);
 }
