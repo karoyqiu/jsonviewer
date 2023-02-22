@@ -66,31 +66,37 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="19"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="83"/>
         <source>Tree view</source>
         <translation>树视图</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="33"/>
+        <location filename="mainwindow.ui" line="32"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="84"/>
         <source>Text view</source>
         <translation>文本视图</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="44"/>
+        <location filename="mainwindow.ui" line="43"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="73"/>
         <source>&amp;Open...</source>
         <translation>打开(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="47"/>
+        <location filename="mainwindow.ui" line="46"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="75"/>
         <source>Open</source>
         <translation>打开</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="50"/>
+        <location filename="mainwindow.ui" line="49"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="78"/>
         <source>Open a JSON file.</source>
         <translation>打开 JSON 文件。</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="53"/>
+        <location filename="mainwindow.ui" line="52"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="81"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
@@ -108,7 +114,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="main.cpp" line="37"/>
+        <location filename="main.cpp" line="43"/>
         <source>JSON Viewer</source>
         <translation>JSON 查看器</translation>
     </message>
