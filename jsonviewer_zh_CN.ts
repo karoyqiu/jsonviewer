@@ -65,48 +65,49 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="19"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="83"/>
+        <location filename="mainwindow.ui" line="25"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="85"/>
         <source>Tree view</source>
         <translation>树视图</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="32"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="84"/>
+        <location filename="mainwindow.ui" line="38"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="86"/>
         <source>Text view</source>
         <translation>文本视图</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="43"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="73"/>
+        <location filename="mainwindow.ui" line="49"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="75"/>
         <source>&amp;Open...</source>
         <translation>打开(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="46"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="75"/>
+        <location filename="mainwindow.ui" line="52"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="77"/>
         <source>Open</source>
         <translation>打开</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="49"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="78"/>
+        <location filename="mainwindow.ui" line="55"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="80"/>
         <source>Open a JSON file.</source>
         <translation>打开 JSON 文件。</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="52"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="81"/>
+        <location filename="mainwindow.ui" line="58"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="83"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="75"/>
-        <source>JSON files (*.json);;All files (*)</source>
-        <translation>JSON 文件 (*.json);;所有文件 (*)</translation>
+        <source>JSON files (*.json *.har);;All files (*)</source>
+        <oldsource>JSON files (*.json,*.har);;All files (*)</oldsource>
+        <translation type="unfinished">JSON 文件 (*.json);;所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="89"/>
+        <location filename="mainwindow.cpp" line="90"/>
         <source>Failed to open file</source>
         <translation>打开文件失败</translation>
     </message>

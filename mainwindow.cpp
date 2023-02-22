@@ -72,7 +72,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
 void MainWindow::openDocument()
 {
     QString filename = QFileDialog::getOpenFileName(this, QString(), QString(),
-        tr("JSON files (*.json);;All files (*)"));
+        tr("JSON files (*.json *.har);;All files (*)"));
 
     if (!filename.isEmpty())
     {
@@ -81,6 +81,7 @@ void MainWindow::openDocument()
         if (file.open(QFile::ReadOnly | QFile::Text))
         {
             model_->setJson(file.readAll());
+            ui->treeView->expandAll();
             ui->editView->setPlainText(QString::fromUtf8(model_->document().toJson()));
             setWindowFilePath(filename);
         }

@@ -119,7 +119,7 @@ int JsonModel::rowCount(const QModelIndex &parent) const
 int JsonModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return ColumnCount;
+        return ColumnCount;
 }
 
 
@@ -127,7 +127,7 @@ QVariant JsonModel::data(const QModelIndex &index, int role) const
 {
     QVariant var;
 
-    if (index.isValid() && (role == Qt::DisplayRole))
+    if (index.isValid() && (role == Qt::DisplayRole || role == Qt::ToolTipRole))
     {
         const JsonItem *item = static_cast<const JsonItem *>(index.internalPointer());
 
@@ -203,6 +203,9 @@ Qt::ItemFlags JsonModel::flags(const QModelIndex &index) const
 
 void JsonModel::setJson(const QByteArray &json)
 {
+    QElapsedTimer timer;
+    timer.start();
+
     beginResetModel();
 
     doc_ = QJsonDocument::fromJson(json);
@@ -222,4 +225,6 @@ void JsonModel::setJson(const QByteArray &json)
     }
 
     endResetModel();
+
+    qInfo() << "JSON parsed:" << timer.elapsed();
 }
