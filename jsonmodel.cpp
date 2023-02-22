@@ -123,51 +123,71 @@ int JsonModel::columnCount(const QModelIndex &parent) const
 }
 
 
-QVariant JsonModel::data(const QModelIndex &index, int role) const
+QVariant JsonModel::data(const QModelIndex &idx, int role) const
 {
     QVariant var;
 
-    if (index.isValid() && (role == Qt::DisplayRole || role == Qt::ToolTipRole))
+    if (idx.isValid())
     {
-        const JsonItem *item = static_cast<const JsonItem *>(index.internalPointer());
+        const JsonItem *item = static_cast<const JsonItem *>(idx.internalPointer());
 
-        switch (index.column())
+        switch (role)
         {
-        case NameColumn:
-            var = item->name();
-            break;
-        case TypeColumn:
-            switch (item->type())
+        case Qt::DisplayRole:
+        case Qt::ToolTipRole:
+        {
+            switch (idx.column())
             {
-            case QJsonValue::Null:
-                var = tr("Null");
+            case NameColumn:
+                var = item->name();
                 break;
-            case QJsonValue::Bool:
-                var = tr("Bool");
+            case TypeColumn:
+                switch (item->type())
+                {
+                case QJsonValue::Null:
+                    var = tr("Null");
+                    break;
+                case QJsonValue::Bool:
+                    var = tr("Bool");
+                    break;
+                case QJsonValue::Double:
+                    var = tr("Double");
+                    break;
+                case QJsonValue::String:
+                    var = tr("String");
+                    break;
+                case QJsonValue::Array:
+                    var = tr("Array");
+                    break;
+                case QJsonValue::Object:
+                    var = tr("Object");
+                    break;
+                case QJsonValue::Undefined:
+                    var = tr("Undefined");
+                    break;
+                default:
+                    break;
+                }
+
                 break;
-            case QJsonValue::Double:
-                var = tr("Double");
-                break;
-            case QJsonValue::String:
-                var = tr("String");
-                break;
-            case QJsonValue::Array:
-                var = tr("Array");
-                break;
-            case QJsonValue::Object:
-                var = tr("Object");
-                break;
-            case QJsonValue::Undefined:
-                var = tr("Undefined");
-                break;
-            default:
+
+            case ValueColumn:
+                var = item->value();
                 break;
             }
-
             break;
+        }
 
-        case ValueColumn:
-            var = item->value();
+        //case Qt::DecorationRole:
+        //    if (idx.column() == TypeColumn)
+        //    {
+        //        static const QPixmap obj(QS(":/icons/types/object.svg"));
+        //        var = obj;
+        //    }
+
+        //    break;
+
+        default:
             break;
         }
     }

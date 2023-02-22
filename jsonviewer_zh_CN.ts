@@ -27,37 +27,37 @@
         <translation>值</translation>
     </message>
     <message>
-        <location filename="jsonmodel.cpp" line="143"/>
+        <location filename="jsonmodel.cpp" line="148"/>
         <source>Null</source>
         <translation>空</translation>
     </message>
     <message>
-        <location filename="jsonmodel.cpp" line="146"/>
+        <location filename="jsonmodel.cpp" line="151"/>
         <source>Bool</source>
         <translation>布尔型</translation>
     </message>
     <message>
-        <location filename="jsonmodel.cpp" line="149"/>
+        <location filename="jsonmodel.cpp" line="154"/>
         <source>Double</source>
         <translation>数值</translation>
     </message>
     <message>
-        <location filename="jsonmodel.cpp" line="152"/>
+        <location filename="jsonmodel.cpp" line="157"/>
         <source>String</source>
         <translation>字符串</translation>
     </message>
     <message>
-        <location filename="jsonmodel.cpp" line="155"/>
+        <location filename="jsonmodel.cpp" line="160"/>
         <source>Array</source>
         <translation>数组</translation>
     </message>
     <message>
-        <location filename="jsonmodel.cpp" line="158"/>
+        <location filename="jsonmodel.cpp" line="163"/>
         <source>Object</source>
         <translation>对象</translation>
     </message>
     <message>
-        <location filename="jsonmodel.cpp" line="161"/>
+        <location filename="jsonmodel.cpp" line="166"/>
         <source>Undefined</source>
         <translation>未定义</translation>
     </message>
@@ -73,32 +73,32 @@
         <translation type="vanished">文本视图</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="27"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="77"/>
+        <location filename="mainwindow.ui" line="30"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="78"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="43"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="67"/>
+        <location filename="mainwindow.ui" line="46"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="68"/>
         <source>&amp;Open...</source>
         <translation>打开(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="46"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="69"/>
+        <location filename="mainwindow.ui" line="49"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="70"/>
         <source>Open</source>
         <translation>打开</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="49"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="72"/>
+        <location filename="mainwindow.ui" line="52"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="73"/>
         <source>Open a JSON file.</source>
         <translation>打开 JSON 文件。</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="52"/>
-        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="75"/>
+        <location filename="mainwindow.ui" line="55"/>
+        <location filename="out/build/x64-Debug/jsonviewer_autogen/include/ui_mainwindow.h" line="76"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>

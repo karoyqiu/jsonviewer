@@ -2,5 +2,11 @@
     <qresource prefix="/">
         <file>icons/elementary/index.theme</file>
         <file>icons/elementary/actions/24/document-open.svg</file>
+        <file>icons/types/array.svg</file>
+        <file>icons/types/number.svg</file>
+        <file>icons/types/object.svg</file>
+        <file>icons/types/string.svg</file>
+        <file>icons/types/time.svg</file>
+        <file>icons/types/uri.svg</file>
     </qresource>
 </RCC>
